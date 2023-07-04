@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Zoo.Interface;
 
 namespace Zoo
 {
@@ -47,11 +48,29 @@ namespace Zoo
                 string s6 = $"Sound: {animal.Sound()}";
                 Console.SetCursorPosition((Console.WindowWidth - s6.Length) / 2, Console.CursorTop);
                 Console.WriteLine(s6);
-
+                if (animal is IFly flyableAnimal)
+                {
+                    string s7 = "Inherited Behavior: (Flying) "+flyableAnimal.canFly();
+                    Console.SetCursorPosition((Console.WindowWidth - s7.Length) / 2, Console.CursorTop);
+                    Console.WriteLine(s7);
+                }
+                 if (animal is IBirth GivingBirthAnimal )
+                {
+                    string s8 = "Inherited Behavior: (Giving Birth) "+GivingBirthAnimal.givingBirth();
+                    Console.SetCursorPosition((Console.WindowWidth - s8.Length) / 2, Console.CursorTop);
+                    Console.WriteLine(s8);
+                }
+                 if (animal is ILayEggs LayingEggsAnimals)
+                {
+                    string s9 = "Inherited Behavior: (Putting Eggs) "+LayingEggsAnimals.LayEggs();
+                    Console.SetCursorPosition((Console.WindowWidth - s9.Length) / 2, Console.CursorTop);
+                    Console.WriteLine(s9);
+                }
                 count++;
                 string horizontalLine = new string('-', Console.WindowWidth);
                 Console.WriteLine(horizontalLine);
                 Console.WriteLine();
+               
             }
         }
     }

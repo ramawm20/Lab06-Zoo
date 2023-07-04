@@ -43,12 +43,15 @@ namespace Zoo
             Lions lion1 = new Lions("Simba", 2);
             Penguin p1 = new Penguin("Koke", 4);
             Turtules t1 = new Turtules("Limon", 6);
+            Owl o1 = new Owl("lumi", 4);
 
             Myzoo.AddAnimal(cat1);
             Myzoo.AddAnimal(cat2);
             Myzoo.AddAnimal(lion1);
             Myzoo.AddAnimal(t1);
             Myzoo.AddAnimal(p1);
+            Myzoo.AddAnimal(o1);
+
 
             Myzoo.AnimalInformation();
 

@@ -22,9 +22,9 @@ namespace Zoo
         {
             return "The animals makes sounds";
         }
-        public virtual void sleep()
+        public virtual string sleep()
         {
-            Console.WriteLine("The animal is sleeping");
+            return "The animal is sleeping";
         }
        
         

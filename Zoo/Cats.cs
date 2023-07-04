@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Zoo.Interface;
 
 namespace Zoo
 {
     //Class cats inherits from Mammals which inherits from animals 
-    public class Cats : Mammals
+    public class Cats : Mammals,IBirth
     {
         //Override the name and age from the animals class
         public override string Name { get; set; }
@@ -19,11 +20,7 @@ namespace Zoo
             this.Name = Name;
             this.age = age;
         }
-        //Override the Birth method frm class Mammals
-        public override void Birth()
-        {
-            Console.WriteLine($"{Name} Gives birth");
-        }
+        
 
         public override string Sound()
         {
@@ -37,6 +34,11 @@ namespace Zoo
         public override void Eat()
         {
             Console.WriteLine($"{Name} Is eating Tuna");
+        }
+
+        public string givingBirth()
+        {
+            return $"{Name} reproduces by giving Birth";
         }
     }
 }

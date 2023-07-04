@@ -10,10 +10,10 @@ namespace Zoo
     public abstract class Mammals : Animals
     {
 
-        public override void sleep()
+        public override string sleep()
         {
-            base.sleep();
+            return base.sleep();
         }
-        public abstract void Birth();
+        
     }
 }

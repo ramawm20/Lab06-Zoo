@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Zoo.Interface;
 
 namespace Zoo
 {
-    public class Lions:Mammals
+    public class Lions:Mammals,IBirth
     {
         public override string Name { get; set; }
         public override int age { get; set; }
@@ -16,11 +17,7 @@ namespace Zoo
             this.Name = Name;
             this.age = age;
         }
-        public override void Birth()
-        {
-            Console.WriteLine($"{Name} Gives birth");
-        }
-
+       
         public override string Sound()
         {
             return $"{Name} sound is Roar!";
@@ -33,6 +30,10 @@ namespace Zoo
         public override void Eat()
         {
             Console.WriteLine($"{Name} Is eating Meats");
+        }
+        public string givingBirth()
+        {
+            return $"{Name} reproduces by giving Birth";
         }
     }
 }

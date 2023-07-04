@@ -6,12 +6,9 @@ using System.Threading.Tasks;
 
 namespace Zoo
 {
-    public abstract class Reptiles:Animals
+    public interface IFly
     {
-        public override string sleep()
-        {
-            return base.sleep();
-        }
-       
+
+        string canFly();
     }
 }
