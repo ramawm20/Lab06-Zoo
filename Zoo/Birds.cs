@@ -9,12 +9,14 @@ namespace Zoo
     //abstrct class birds inherits class animals 
     public abstract class Birds:Animals
     {
+       
+
         //Override the method sleep from the class animals
-        public override void sleep()
+        public override string sleep()
         {
-            base.sleep();
+            return base.sleep();
         }
-        //Abstract method 
-        public abstract string Fly();
+  
+        
     }
 }

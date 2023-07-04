@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Zoo.Interface;
 
 namespace Zoo
 {
-    public class Owl : Birds
+    public class Owl : Birds, IFly,ILayEggs
     {
+        
         public override string Name { get;set; }
         public override int age { get; set; }
 
@@ -21,9 +23,9 @@ namespace Zoo
             Console.WriteLine($"{Name} eats Birds and insects");
         }
 
-        public override string Fly()
+        public string canFly()
         {
-            return $"{Name} Can fly ";
+            return $"{Name} Can Fly";
         }
 
         public override string Sound()
@@ -33,7 +35,12 @@ namespace Zoo
 
         public override string Type()
         {
-            return $"{Name} is Owl it's from Birds";
+            return $"{Name} is an Owl It's from Birds";
+        }
+
+        public string LayEggs()
+        {
+            return $"{Name} reproduces by Laying Eggs";
         }
     }
 }

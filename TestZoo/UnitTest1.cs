@@ -1,5 +1,6 @@
 using System.Xml.Linq;
 using Zoo;
+using Zoo.Interface;
 
 namespace TestZoo
 {
@@ -64,6 +65,39 @@ namespace TestZoo
             //Assert
             Assert.Equal("Hops", p1.Name);
             Assert.Equal(3, p1.age);
+        }
+        [Fact]
+        public void TestImplementingInteface()
+        {
+            // Arrange
+            Cats cat = new Cats("Lulu",8);
+            Owl owl = new Owl("koke", 3);
+
+            // Act & Assert
+            Assert.True(cat is IBirth);
+            Assert.True(owl is IFly&& owl is ILayEggs);
+            Assert.False(owl is IBirth);
+
+        }
+        [Fact]
+        public void TestInheritance()
+        {
+            Cats cat = new Cats("Lulu", 8);
+
+            Assert.Equal($"{cat.Name} sound is Meow!", cat.Sound());
+            Assert.Equal("The animal is sleeping", cat.sleep());
+
+        }
+        [Fact]
+        public void TestPolymorphism()
+        {
+            Lions lion1 = new Lions("simba", 2);
+
+            //Test Overridden
+            Assert.Equal($"{lion1.Name} sound is Roar!", lion1.Sound());
+
+            //Test Is an Animal
+            Assert.True(lion1 is Animals);
         }
 
     }
